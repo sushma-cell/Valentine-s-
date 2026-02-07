@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Valentine 💖</title>
+  <style>
+    body{
+      margin:0;
+      font-family:Arial;
+      background:linear-gradient(#ff9a9e,#fad0c4);
+      overflow:hidden;
+      text-align:center;
+    }
+    h1{margin-top:40px;color:#fff;}
+    button{
+      padding:15px 25px;
+      font-size:18px;
+      border:none;
+      border-radius:20px;
+      cursor:pointer;
+      margin:10px;
+    }
+    .yes{background:#ff4d6d;color:white;}
+    .no{background:#fff;color:#ff4d6d;}
+    .heart{
+      font-size:80px;
+      cursor:pointer;
+    }
+    .bar{
+      width:200px;
+      height:20px;
+      border:2px solid white;
+      margin:20px auto;
+    }
+    .fill{
+      height:100%;
+      width:0%;
+      background:red;
+    }
+    .petal{
+      position:fixed;
+      top:-50px;
+      font-size:24px;
+      animation:fall linear infinite;
+    }
+    @keyframes fall{
+      to{transform:translateY(110vh);}
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Will you be my Valentine? 💕</h1>
+<button class="yes" onclick="page2()">Yes</button>
+<button class="no">No</button>
+
+<script>
+function page2(){
+  document.body.innerHTML=`
+  <h1>Hold the heart ❤️</h1>
+  <div class="heart" 
+    onmousedown="start()" 
+    onmouseup="stop()">❤️</div>
+  <div class="bar"><div class="fill" id="fill"></div></div>
+  `;
+}
+
+let i=0, timer;
+function start(){
+  timer=setInterval(()=>{
+    if(i>=100){page3();clearInterval(timer);}
+    i+=1;
+    document.getElementById("fill").style.width=i+"%";
+  },30);
+}
+function stop(){clearInterval(timer);}
+
+function page3(){
+  document.body.innerHTML=`
+    <h1>Yes, I knew it 💖</h1>
+    <h2>You will be my Valentine 🧸🧸</h2>
+  `;
+  setInterval(()=>{
+    let r=document.createElement("div");
+    r.className="petal";
+    r.innerHTML="🌹";
+    r.style.left=Math.random()*100+"vw";
+    r.style.animationDuration="6s";
+    document.body.appendChild(r);
+    setTimeout(()=>r.remove(),6000);
+  },900);
+}
+</script>
+
+</body>
+</html>
