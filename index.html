@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Valentine 💖</title>
+  <style>
+    body {
+      background: pink;
+      text-align: center;
+      font-family: Arial;
+    }
+    button {
+      font-size: 20px;
+      padding: 10px 20px;
+      margin: 20px;
+      border-radius: 10px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Will you be my Valentine? ❤️</h1>
+  <button onclick="next()">YES 💖</button>
+
+  <script>
+    function next() {
+      document.body.innerHTML = `
+        <h1>Hold the ❤️</h1>
+        <progress id="bar" value="0" max="100"></progress>
+        <br><br>
+        <button onmousedown="fill()">Hold ❤️</button>
+      `;
+    }
+
+    function fill() {
+      let bar = document.getElementById("bar");
+      let i = 0;
+      let interval = setInterval(() => {
+        if (i >= 100) {
+          clearInterval(interval);
+          document.body.innerHTML = `
+            <h1>🧸🧸</h1>
+            <h2>I knew you will be my Valentine 💕</h2>
+            <p>🌹🌹🌹</p>
+          `;
+        }
+        bar.value = i++;
+      }, 50);
+    }
+  </script>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+  <title>Valentine 💖</title>
+  <style>
+    body {
+      background: pink;
+      text-align: center;
+      font-family: Arial;
+    }
+    button {
+      font-size: 20px;
+      padding: 10px 20px;
+      margin: 20px;
+      border-radius: 10px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Will you be my Valentine? ❤️</h1>
+  <button onclick="next()">YES 💖</button>
+
+  <script>
+    function next() {
+      document.body.innerHTML = `
+        <h1>Hold the ❤️</h1>
+        <progress id="bar" value="0" max="100"></progress>
+        <br><br>
+        <button onmousedown="fill()">Hold ❤️</button>
+      `;
+    }
+
+    function fill() {
+      let bar = document.getElementById("bar");
+      let i = 0;
+      let interval = setInterval(() => {
+        if (i >= 100) {
+          clearInterval(interval);
+          document.body.innerHTML = `
+            <h1>🧸🧸</h1>
+            <h2>I knew you will be my Valentine 💕</h2>
+            <p>🌹🌹🌹</p>
+          `;
+        }
+        bar.value = i++;
+      }, 50);
+    }
+  </script>
+
+</body>
+</html>
